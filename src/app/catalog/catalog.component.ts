@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Observable } from 'rxjs';
+
 import {GetgoodsService} from '../getgoods.service';
 
 import {Good} from '../shared/good'
@@ -10,10 +12,12 @@ import {Good} from '../shared/good'
   styleUrls: ['./catalog.component.css']
 })
 export class CatalogComponent implements OnInit {
+  goods: any;
 
-  constructor() { }
+  constructor(private ggs: GetgoodsService) { }
 
   ngOnInit(): void {
+    this.goods = this.ggs.getGoods();
   }
 
 }

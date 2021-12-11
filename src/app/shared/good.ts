@@ -1,5 +1,5 @@
 export class Good {
-   id!: number;
-   name!: string;
-   price!: number;
+   id: number = 0;
+   name: string = "";
+   price: number = 0;
 }
